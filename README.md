@@ -60,9 +60,9 @@ To install and run this project locally, follow these steps:
 
 To run the project locally, use the following command:
 
-    ```bash
-    dotnet run
-    ```
+```bash
+dotnet run
+```
 
 
 By default, the API will be accessible at `http://localhost:5029`.
