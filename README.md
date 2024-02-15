@@ -12,7 +12,21 @@ Before you begin, ensure you have met the following requirements:
 
 - **.NET SDK**: Install the [.NET SDK](https://dotnet.microsoft.com/download) appropriate for your operating system.
 - **IDE**: You can use any text editor or IDE of your choice. [Visual Studio](https://visualstudio.microsoft.com/) or [Visual Studio Code](https://code.visualstudio.com/) are recommended for C# development.
-- **Database**: This project assumes the use of a SQL database. Ensure you have a SQL database available or configure the project to use an in-memory database for testing purposes.
+- **MySQL Database**: This project uses MySQL as the database. Make sure you have MySQL installed on your system or have access to a MySQL database server. You can download and install MySQL from the [official website](https://dev.mysql.com/downloads/).
+- **Connection String**: Update the connection string in the `appsettings.json` file with your MySQL database connection details.
+
+## MySQL Connection String
+
+Before running the project, make sure to update the connection string in the `appsettings.json` file with the appropriate MySQL database connection details. Here's an example of how the connection string should look:
+
+```json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "server=localhost;port=3306;database=mydatabase;user=myuser;password=mypassword;"
+  }
+}
+```
+Replace localhost, 3306, mydatabase, myuser, and mypassword with your MySQL server hostname or IP address, port number, database name, username, and password respectively.
 
 ## Installation
 
