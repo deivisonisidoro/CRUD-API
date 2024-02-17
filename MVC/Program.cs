@@ -1,4 +1,5 @@
-
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using MVC.Data;
@@ -11,11 +12,11 @@ namespace MVC
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-            
+
             var connectionString = builder.Configuration.GetConnectionString("MVCConnection");
 
             builder.Services.AddDbContext<MVCContext>(
-                opts => 
+                opts =>
                     opts.UseMySql(
                         connectionString,
                         ServerVersion.AutoDetect(connectionString)
@@ -48,7 +49,7 @@ namespace MVC
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
+            
             app.MapControllers();
 
             app.Run();
