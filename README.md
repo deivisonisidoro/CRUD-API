@@ -72,3 +72,48 @@ By default, the API will be accessible at `http://localhost:5029`.
 This project uses Swagger for API documentation. Once the project is running locally, you can access the Swagger UI to explore and interact with the API endpoints. Open your web browser and navigate to:
 
 ```http://localhost:5029/swagger```
+
+
+## Docker and Docker Compose
+
+This application utilizes Docker and Docker Compose for containerization and orchestration.
+
+### Dockerfile
+
+A Dockerfile is included in the project, which defines the environment for the application. This Dockerfile is used to build an image of the application.
+
+### Docker Compose
+
+The project includes two Docker Compose files:
+
+- `docker-compose.yml`: This file defines the services needed to run the application. It includes configurations for both the MVC application (`mvc`) and the MySQL database (`db`).
+
+- `docker-compose.override.yml`: This file is used to override settings defined in the base `docker-compose.yml` file. It is typically used for development-specific settings.
+
+### Running Docker
+
+To run the application with Docker, follow these steps:
+
+1. Make sure you have Docker and Docker Compose installed on your system.
+
+2. Open a terminal and navigate to the project directory.
+
+3. Run the following command to start the Docker containers in detached mode:
+
+    ```bash
+    docker-compose up -d
+    ```
+
+    This command will create and start the containers defined in the `docker-compose.yml` file.
+
+4. Once the containers are running, you can access the MVC application at `http://localhost::55078`.
+
+5. To stop the containers, run:
+
+    ```bash
+    docker-compose down
+    ```
+
+    This will stop and remove the containers, but preserve the data volumes.
+
+By using Docker and Docker Compose, you can easily manage the development and deployment environment for the application, ensuring consistency and reproducibility across different environments.
